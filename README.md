@@ -1,7 +1,7 @@
 # GameLog
 
 **Nome:** Victor Corradi  
-**Matrícula:** 000000  
+**Matrícula:** 906999
 **Proposta:** Coleções e Itens  
 
 ## Descrição
