@@ -276,11 +276,44 @@
         <span class="logo-text">GameLog</span>
         <p class="footer-tagline">Registre. Avalie. Descubra.</p>
       </div>
+
+      <nav class="footer-nav">
+        <div class="footer-nav-col">
+          <h4>Produto</h4>
+          <a href="#">Funcionalidades</a>
+          <a href="#">Para criadores</a>
+          <a href="#">API</a>
+        </div>
+        <div class="footer-nav-col">
+          <h4>Comunidade</h4>
+          <a href="#">Fórum</a>
+          <a href="#">Listas populares</a>
+          <a href="#">Críticos</a>
+        </div>
+        <div class="footer-nav-col">
+          <h4>Empresa</h4>
+          <a href="#">Sobre</a>
+          <a href="#">Blog</a>
+          <a href="#">Contato</a>
+        </div>
+      </nav>
     </div>
     <div class="footer-bottom">
       <p>© 2025 GameLog. Projeto acadêmico — Desenvolvimento Web.</p>
     </div>
   </footer>
-  
+
+  <!-- Script do menu hamburguer -->
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    toggle.addEventListener('click', function () {
+      const isOpen = mobileNav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+      toggle.textContent = isOpen ? '✕' : '☰';
+    });
+  </script>
+
 </body>
 </html>

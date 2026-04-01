@@ -789,3 +789,175 @@ ul {
   font-size: 0.8rem;
   color: var(--color-muted);
 }
+
+/* ================================================
+   RESPONSIVIDADE — MEDIA QUERIES
+   ================================================ */
+
+/* --- TABLET LARGO: até 1024px --- */
+@media (max-width: 1024px) {
+  :root {
+    --padding-page: 1.5rem;
+  }
+
+  .games-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .signup-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-nav {
+    gap: 2.5rem;
+  }
+}
+
+/* --- TABLET: até 768px --- */
+@media (max-width: 768px) {
+  :root {
+    --padding-page: 1.25rem;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .header-actions .search-form {
+    display: none;
+  }
+
+  .hero-section {
+    min-height: 420px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(13,13,15,0.6) 0%,
+      rgba(13,13,15,0.95) 75%
+    );
+  }
+
+  .hero-stats {
+    gap: 1.25rem;
+    padding-bottom: 2rem;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .games-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .games-section,
+  .community-section,
+  .signup-section {
+    padding: 2.5rem var(--padding-page);
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-nav {
+    gap: 1.5rem;
+  }
+}
+
+/* --- MOBILE: até 480px --- */
+@media (max-width: 480px) {
+  :root {
+    --padding-page: 1rem;
+  }
+
+  .header-inner {
+    gap: 0.75rem;
+  }
+
+  .logo-text {
+    font-size: 1.4rem;
+  }
+
+  .btn-login {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.8rem;
+  }
+
+  .hero-section {
+    min-height: 360px;
+  }
+
+  .hero-content {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 9vw, 2.5rem);
+  }
+
+  .hero-subtitle {
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-ghost {
+    text-align: center;
+    padding: 0.7rem 1.5rem;
+  }
+
+  .hero-stats {
+    gap: 1rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .games-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .activity-card {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .signup-form-wrap {
+    padding: 1.5rem;
+  }
+
+  .footer-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
