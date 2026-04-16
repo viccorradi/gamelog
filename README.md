@@ -13,7 +13,7 @@ escrever resenhas e acompanhar a atividade de outros jogadores.
 ![Wireframe](img/Wireframe.png)
 
 ## Preview Desktop
-![Desktop](img/preview-desktop.png)
+![Desktop](img/preview-desktop-bootstrap.png)
 
 ## Preview Mobile
-![Mobile](img/preview-mobile.png)
+![Mobile](img/preview-mobile-bootstrap.png)
