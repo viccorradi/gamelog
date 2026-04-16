@@ -11,48 +11,43 @@
   <meta property="og:image" content="https://picsum.photos/id/1074/1200/630" />
 
   <title>GameLog</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Bootstrap CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <!-- CSS customizado (cores, tipografia, detalhes visuais) -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- ========== HEADER ========== -->
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="logo">
-        <span class="logo-text">GameLog</span>
-      </div>
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark px-3 px-lg-4">
 
-      <nav class="main-nav">
-        <a href="#" class="nav-link active">Início</a>
-        <a href="#" class="nav-link">Jogos</a>
-        <a href="#" class="nav-link">Listas</a>
-        <a href="#" class="nav-link">Comunidade</a>
-        <a href="#" class="nav-link">Diário</a>
-      </nav>
+      <a class="navbar-brand logo-text" href="#">GameLog</a>
 
-      <div class="header-actions">
-        <form class="search-form" action="#" method="get">
-          <input class="search-input" type="search" name="q" placeholder="Buscar jogo..." />
-          <button class="search-btn" type="submit">⌕</button>
+      <!-- Botão hamburguer gerado pelo Bootstrap -->
+      <button class="navbar-toggler border-secondary" type="button"
+        data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0 ms-2">
+          <li class="nav-item"><a href="#" class="nav-link active">Início</a></li>
+          <li class="nav-item"><a href="#games" class="nav-link">Jogos</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Listas</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Comunidade</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Diário</a></li>
+        </ul>
+        <form class="d-flex gap-2 mt-2 mt-md-0" action="#" method="get">
+          <input class="form-control search-input" type="search" name="q" placeholder="Buscar jogo..." />
+          <a href="#signup" class="btn btn-login">Entrar</a>
         </form>
-        <a href="#" class="btn-login">Entrar</a>
-        <!-- Botão hamburguer: só aparece no mobile -->
-        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
       </div>
-    </div>
 
-    <!-- Menu mobile expandido -->
-    <nav class="mobile-nav" id="mobile-nav">
-      <a href="#" class="nav-link active">Início</a>
-      <a href="#" class="nav-link">Jogos</a>
-      <a href="#" class="nav-link">Listas</a>
-      <a href="#" class="nav-link">Comunidade</a>
-      <a href="#" class="nav-link">Diário</a>
-      <form class="search-form" action="#" method="get" style="margin-top:0.5rem; border-radius: 6px;">
-        <input class="search-input" type="search" name="q" placeholder="Buscar jogo..." style="width:100%" />
-        <button class="search-btn" type="submit">⌕</button>
-      </form>
     </nav>
   </header>
 
@@ -65,203 +60,222 @@
         <img src="https://picsum.photos/id/1074/1600/700" alt="Banner principal do GameLog" class="hero-bg-img" />
         <div class="hero-overlay"></div>
       </div>
-      <div class="hero-content">
-        <p class="hero-eyebrow">Bem-vindo ao GameLog</p>
-        <h1 class="hero-title">Registre cada jogo.<br />Descubra os próximos.</h1>
-        <p class="hero-subtitle">
-          O GameLog é o seu diário gamer. Avalie, liste e compartilhe
-          os jogos que marcaram sua vida — e encontre os próximos.
-        </p>
-        <div class="hero-cta">
-          <a href="#signup" class="btn-primary">Criar conta grátis</a>
-          <a href="#games" class="btn-ghost">Explorar jogos</a>
+
+      <div class="container hero-content">
+        <div class="row">
+          <div class="col-12 col-md-8 col-lg-6">
+            <p class="hero-eyebrow">Bem-vindo ao GameLog</p>
+            <h1 class="hero-title">Registre cada jogo.<br />Descubra os próximos.</h1>
+            <p class="hero-subtitle">
+              O GameLog é o seu diário gamer. Avalie, liste e compartilhe
+              os jogos que marcaram sua vida — e encontre os próximos.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#signup" class="btn btn-primary-custom">Criar conta grátis</a>
+              <a href="#games" class="btn btn-ghost-custom">Explorar jogos</a>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-number">48k</span>
-          <span class="stat-label">Jogos</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-number">120k</span>
-          <span class="stat-label">Usuários</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-number">3.2M</span>
-          <span class="stat-label">Avaliações</span>
+
+      <div class="container hero-stats">
+        <div class="d-flex flex-wrap gap-4 align-items-center">
+          <div class="stat-item">
+            <span class="stat-number">48k</span>
+            <span class="stat-label d-block">Jogos</span>
+          </div>
+          <div class="stat-divider d-none d-md-block"></div>
+          <div class="stat-item">
+            <span class="stat-number">120k</span>
+            <span class="stat-label d-block">Usuários</span>
+          </div>
+          <div class="stat-divider d-none d-md-block"></div>
+          <div class="stat-item">
+            <span class="stat-number">3.2M</span>
+            <span class="stat-label d-block">Avaliações</span>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- GAMES EM DESTAQUE -->
     <section class="games-section" id="games">
-      <div class="section-header">
-        <h2 class="section-title">Jogos em Destaque</h2>
-        <a href="#" class="section-link">Ver todos →</a>
-      </div>
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-baseline mb-4">
+          <h2 class="section-title">Jogos em Destaque</h2>
+          <a href="#" class="section-link">Ver todos →</a>
+        </div>
 
-      <div class="games-grid">
+        <!-- row-cols-2: 2 colunas mobile | row-cols-md-3: 3 tablet | row-cols-lg-5: 5 desktop -->
+        <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-5">
 
-        <article class="game-card game-card--featured">
-          <div class="game-card__cover">
-            <img src="img/Capa ER.jpg" alt="Capa do jogo Elden Ring" />
-            <div class="game-card__overlay">
-              <span class="game-card__rating">★ 4.8</span>
-            </div>
+          <div class="col">
+            <article class="game-card game-card--featured h-100">
+              <div class="game-card__cover">
+                <img src="img/Capa ER.jpg" alt="Capa do jogo Elden Ring" />
+                <div class="game-card__overlay"><span class="game-card__rating">★ 4.8</span></div>
+              </div>
+              <div class="game-card__info">
+                <span class="game-card__genre">RPG</span>
+                <h3 class="game-card__title">Elden Ring</h3>
+                <p class="game-card__meta">2022</p>
+              </div>
+            </article>
           </div>
-          <div class="game-card__info">
-            <span class="game-card__genre">RPG</span>
-            <h3 class="game-card__title">Elden Ring</h3>
-            <p class="game-card__meta">2022</p>
-          </div>
-        </article>
 
-        <article class="game-card">
-          <div class="game-card__cover">
-            <img src="img/Capa RER.jpeg" alt="Capa do jogo Resident Evil Requiem" />
-            <div class="game-card__overlay">
-              <span class="game-card__rating">★ 4.5</span>
-            </div>
+          <div class="col">
+            <article class="game-card h-100">
+              <div class="game-card__cover">
+                <img src="img/Capa RER.jpeg" alt="Capa do jogo Resident Evil Requiem" />
+                <div class="game-card__overlay"><span class="game-card__rating">★ 4.5</span></div>
+              </div>
+              <div class="game-card__info">
+                <span class="game-card__genre">Terror</span>
+                <h3 class="game-card__title">Resident Evil Requiem</h3>
+                <p class="game-card__meta">2026</p>
+              </div>
+            </article>
           </div>
-          <div class="game-card__info">
-            <span class="game-card__genre">Terror</span>
-            <h3 class="game-card__title">Resident Evil Requiem</h3>
-            <p class="game-card__meta">2026</p>
-          </div>
-        </article>
 
-        <article class="game-card">
-          <div class="game-card__cover">
-            <img src="img/Capa Uncharted.png" alt="Capa do jogo Uncharted 4" />
-            <div class="game-card__overlay">
-              <span class="game-card__rating">★ 4.7</span>
-            </div>
+          <div class="col">
+            <article class="game-card h-100">
+              <div class="game-card__cover">
+                <img src="img/Capa Uncharted.png" alt="Capa do jogo Uncharted 4" />
+                <div class="game-card__overlay"><span class="game-card__rating">★ 4.7</span></div>
+              </div>
+              <div class="game-card__info">
+                <span class="game-card__genre">Aventura</span>
+                <h3 class="game-card__title">UNCHARTED 4: A Thief's End</h3>
+                <p class="game-card__meta">2016</p>
+              </div>
+            </article>
           </div>
-          <div class="game-card__info">
-            <span class="game-card__genre">Aventura</span>
-            <h3 class="game-card__title">UNCHARTED 4: A Thief's End</h3>
-            <p class="game-card__meta">2016</p>
-          </div>
-        </article>
 
-        <article class="game-card">
-          <div class="game-card__cover">
-            <img src="img/Capa AOE3.jpg" alt="Capa do jogo Age of Empires III" />
-            <div class="game-card__overlay">
-              <span class="game-card__rating">★ 4.3</span>
-            </div>
+          <div class="col">
+            <article class="game-card h-100">
+              <div class="game-card__cover">
+                <img src="img/Capa AOE3.jpg" alt="Capa do jogo Age of Empires III" />
+                <div class="game-card__overlay"><span class="game-card__rating">★ 4.3</span></div>
+              </div>
+              <div class="game-card__info">
+                <span class="game-card__genre">Estratégia</span>
+                <h3 class="game-card__title">Age of Empires III</h3>
+                <p class="game-card__meta">2005</p>
+              </div>
+            </article>
           </div>
-          <div class="game-card__info">
-            <span class="game-card__genre">Estratégia</span>
-            <h3 class="game-card__title">Age of Empires III</h3>
-            <p class="game-card__meta">2005</p>
-          </div>
-        </article>
 
-        <article class="game-card">
-          <div class="game-card__cover">
-            <img src="img/Capa HN.jpg" alt="Capa do jogo Hollow Knight" />
-            <div class="game-card__overlay">
-              <span class="game-card__rating">★ 4.9</span>
-            </div>
+          <div class="col">
+            <article class="game-card h-100">
+              <div class="game-card__cover">
+                <img src="img/Capa HN.jpg" alt="Capa do jogo Hollow Knight" />
+                <div class="game-card__overlay"><span class="game-card__rating">★ 4.9</span></div>
+              </div>
+              <div class="game-card__info">
+                <span class="game-card__genre">Indie</span>
+                <h3 class="game-card__title">Hollow Knight</h3>
+                <p class="game-card__meta">2017</p>
+              </div>
+            </article>
           </div>
-          <div class="game-card__info">
-            <span class="game-card__genre">Indie</span>
-            <h3 class="game-card__title">Hollow Knight</h3>
-            <p class="game-card__meta">2017</p>
-          </div>
-        </article>
 
+        </div>
       </div>
     </section>
 
     <!-- ATIVIDADE DA COMUNIDADE -->
     <section class="community-section">
-      <div class="section-header">
-        <h2 class="section-title">Atividade Recente</h2>
-        <a href="#" class="section-link">Ver mais →</a>
-      </div>
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-baseline mb-4">
+          <h2 class="section-title">Atividade Recente</h2>
+          <a href="#" class="section-link">Ver mais →</a>
+        </div>
 
-      <div class="activity-feed">
+        <div class="activity-feed">
 
-        <article class="activity-card">
-          <img src="https://picsum.photos/id/200/50/50" alt="Avatar do usuário guilherme_p" class="activity-avatar" />
-          <div class="activity-body">
-            <p class="activity-text">
-              <strong>guilherme_p</strong> avaliou <em>Hollow Knight</em>
-              <span class="activity-stars">★★★★★</span>
-            </p>
-            <blockquote class="activity-review">
-              "Uma das experiências mais únicas que já tive em um indie. A narrativa me pegou do zero."
-            </blockquote>
-            <span class="activity-time">há 2 horas</span>
-          </div>
-        </article>
+          <article class="activity-card">
+            <img src="https://picsum.photos/id/200/50/50" alt="Avatar do usuário guilherme_p" class="activity-avatar" />
+            <div class="activity-body">
+              <p class="activity-text">
+                <strong>guilherme_p</strong> avaliou <em>Hollow Knight</em>
+                <span class="activity-stars">★★★★★</span>
+              </p>
+              <blockquote class="activity-review">
+                "Uma das experiências mais únicas que já tive em um indie. A narrativa me pegou do zero."
+              </blockquote>
+              <span class="activity-time">há 2 horas</span>
+            </div>
+          </article>
 
-        <article class="activity-card">
-          <img src="https://picsum.photos/id/177/50/50" alt="Avatar do usuário marina.ctrl" class="activity-avatar" />
-          <div class="activity-body">
-            <p class="activity-text">
-              <strong>marina.ctrl</strong> adicionou <em>Uncharted 4: A Thief's End</em> à lista <em>Quero Jogar</em>
-            </p>
-            <span class="activity-time">há 5 horas</span>
-          </div>
-        </article>
+          <article class="activity-card">
+            <img src="https://picsum.photos/id/177/50/50" alt="Avatar do usuário marina.ctrl" class="activity-avatar" />
+            <div class="activity-body">
+              <p class="activity-text">
+                <strong>marina.ctrl</strong> adicionou <em>Uncharted 4: A Thief's End</em> à lista <em>Quero Jogar</em>
+              </p>
+              <span class="activity-time">há 5 horas</span>
+            </div>
+          </article>
 
-        <article class="activity-card">
-          <img src="https://picsum.photos/id/338/50/50" alt="Avatar do usuário retro_luan" class="activity-avatar" />
-          <div class="activity-body">
-            <p class="activity-text">
-              <strong>retro_luan</strong> avaliou <em>Age of Empires III</em>
-              <span class="activity-stars">★★★★</span>
-            </p>
-            <blockquote class="activity-review">
-              "Estratégia sólida, mas a curva de aprendizado é um pouco íngreme no início."
-            </blockquote>
-            <span class="activity-time">há 1 dia</span>
-          </div>
-        </article>
+          <article class="activity-card">
+            <img src="https://picsum.photos/id/338/50/50" alt="Avatar do usuário retro_luan" class="activity-avatar" />
+            <div class="activity-body">
+              <p class="activity-text">
+                <strong>retro_luan</strong> avaliou <em>Age of Empires III</em>
+                <span class="activity-stars">★★★★</span>
+              </p>
+              <blockquote class="activity-review">
+                "Estratégia sólida, mas a curva de aprendizado é um pouco íngreme no início."
+              </blockquote>
+              <span class="activity-time">há 1 dia</span>
+            </div>
+          </article>
 
+        </div>
       </div>
     </section>
 
     <!-- SIGN UP SECTION -->
     <section class="signup-section" id="signup">
-      <div class="signup-inner">
-        <div class="signup-text">
-          <h2 class="signup-title">Comece seu diário gamer hoje</h2>
-          <p class="signup-desc">
-            Crie sua conta, registre os jogos que você já zerou, monte listas, escreva resenhas
-            e conecte-se com outros jogadores.
-          </p>
-          <ul class="signup-benefits">
-            <li>✓ Diário pessoal de jogos</li>
-            <li>✓ Listas personalizadas</li>
-            <li>✓ Resenhas e avaliações</li>
-            <li>✓ Feed da comunidade</li>
-          </ul>
-        </div>
+      <div class="container">
+        <div class="row align-items-center g-5">
 
-        <div class="signup-form-wrap">
-          <form class="signup-form" action="#" method="post">
-            <h3 class="form-title">Criar conta</h3>
-            <div class="form-group">
-              <label for="username">Nome de usuário</label>
-              <input type="text" id="username" name="username" placeholder="ex: pixel_gamer" required />
+          <div class="col-12 col-md-6">
+            <h2 class="signup-title">Comece seu diário gamer hoje</h2>
+            <p class="signup-desc">
+              Crie sua conta, registre os jogos que você já zerou, monte listas, escreva resenhas
+              e conecte-se com outros jogadores.
+            </p>
+            <ul class="signup-benefits list-unstyled">
+              <li>✓ Diário pessoal de jogos</li>
+              <li>✓ Listas personalizadas</li>
+              <li>✓ Resenhas e avaliações</li>
+              <li>✓ Feed da comunidade</li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="signup-form-wrap">
+              <form class="signup-form" action="#" method="post">
+                <h3 class="form-title">Criar conta</h3>
+                <div class="mb-3">
+                  <label for="username" class="form-label-custom">Nome de usuário</label>
+                  <input type="text" class="form-control form-control-custom" id="username" name="username" placeholder="ex: pixel_gamer" required />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label-custom">E-mail</label>
+                  <input type="email" class="form-control form-control-custom" id="email" name="email" placeholder="seu@email.com" required />
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label-custom">Senha</label>
+                  <input type="password" class="form-control form-control-custom" id="password" name="password" placeholder="••••••••" required />
+                </div>
+                <button type="submit" class="btn btn-submit w-100">Criar minha conta</button>
+                <p class="form-login-link text-center mt-3">Já tem conta? <a href="#">Entrar</a></p>
+              </form>
             </div>
-            <div class="form-group">
-              <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" placeholder="seu@email.com" required />
-            </div>
-            <div class="form-group">
-              <label for="password">Senha</label>
-              <input type="password" id="password" name="password" placeholder="••••••••" required />
-            </div>
-            <button type="submit" class="btn-submit">Criar minha conta</button>
-            <p class="form-login-link">Já tem conta? <a href="#">Entrar</a></p>
-          </form>
+          </div>
+
         </div>
       </div>
     </section>
@@ -270,50 +284,53 @@
 
   <!-- ========== FOOTER ========== -->
   <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="logo-icon">◈</span>
-        <span class="logo-text">GameLog</span>
-        <p class="footer-tagline">Registre. Avalie. Descubra.</p>
-      </div>
+    <div class="container">
+      <div class="row g-4 py-4">
 
-      <nav class="footer-nav">
-        <div class="footer-nav-col">
-          <h4>Produto</h4>
-          <a href="#">Funcionalidades</a>
-          <a href="#">Para criadores</a>
-          <a href="#">API</a>
+        <div class="col-12 col-md-3">
+          <div class="footer-brand">
+            <span class="logo-icon">◈</span>
+            <span class="logo-text">GameLog</span>
+            <p class="footer-tagline">Registre. Avalie. Descubra.</p>
+          </div>
         </div>
-        <div class="footer-nav-col">
-          <h4>Comunidade</h4>
-          <a href="#">Fórum</a>
-          <a href="#">Listas populares</a>
-          <a href="#">Críticos</a>
+
+        <div class="col-6 col-md-3">
+          <nav class="footer-nav-col">
+            <h4>Produto</h4>
+            <a href="#">Funcionalidades</a>
+            <a href="#">Para criadores</a>
+            <a href="#">API</a>
+          </nav>
         </div>
-        <div class="footer-nav-col">
-          <h4>Empresa</h4>
-          <a href="#">Sobre</a>
-          <a href="#">Blog</a>
-          <a href="#">Contato</a>
+
+        <div class="col-6 col-md-3">
+          <nav class="footer-nav-col">
+            <h4>Comunidade</h4>
+            <a href="#">Fórum</a>
+            <a href="#">Listas populares</a>
+            <a href="#">Críticos</a>
+          </nav>
         </div>
-      </nav>
+
+        <div class="col-6 col-md-3">
+          <nav class="footer-nav-col">
+            <h4>Empresa</h4>
+            <a href="#">Sobre</a>
+            <a href="#">Blog</a>
+            <a href="#">Contato</a>
+          </nav>
+        </div>
+
+      </div>
     </div>
-    <div class="footer-bottom">
+    <div class="footer-bottom text-center">
       <p>© 2025 GameLog. Projeto acadêmico — Desenvolvimento Web.</p>
     </div>
   </footer>
 
-  <!-- Script do menu hamburguer -->
-  <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const mobileNav = document.getElementById('mobile-nav');
-
-    toggle.addEventListener('click', function () {
-      const isOpen = mobileNav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen);
-      toggle.textContent = isOpen ? '✕' : '☰';
-    });
-  </script>
+  <!-- Bootstrap JS via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
