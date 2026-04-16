@@ -1,33 +1,19 @@
-# 🎮 GameLog
+# GameLog
 
-> Uma aplicação web inspirada no Letterboxd, focada em jogos.
+**Nome:** Victor Corradi  
+**Matrícula:** 906999
+**Proposta:** Coleções e Itens  
 
----
+## Descrição
+GameLog é uma plataforma inspirada no Letterboxd, mas voltada para jogos.
+O usuário pode registrar os jogos que já jogou, criar listas personalizadas,
+escrever resenhas e acompanhar a atividade de outros jogadores.
 
-## 📖 Sobre o projeto
+## Wireframe
+![Wireframe](img/Wireframe.png)
 
-O **GameLog** é uma plataforma onde usuários podem registrar, avaliar e compartilhar suas experiências com jogos.
+## Preview Desktop
+![Desktop](img/preview-desktop.png)
 
-A ideia é oferecer uma experiência semelhante ao Letterboxd, mas totalmente voltada para o universo dos games.
-
----
-
-## 🚀 Funcionalidades
-
-- 🎯 Registrar jogos jogados
-- ⭐ Avaliar jogos
-- 📝 Escrever reviews
-- 📚 Criar uma biblioteca pessoal
-- 👥 Seguir outros usuários
-- 🔎 Descobrir novos jogos
-
----
-
-## 🛠️ Tecnologias utilizadas até o momento
-
-- **Frontend:** HTML / CSS
-- **Backend:** (Em produção)
-- **Banco de dados:** (Em produção)
-- **Autenticação:** (Em produção)
-- **Estilização:** CSS
-
+## Preview Mobile
+![Mobile](img/preview-mobile.png)
